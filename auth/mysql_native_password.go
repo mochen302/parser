@@ -19,8 +19,8 @@ import (
 	"encoding/hex"
 	"fmt"
 
+	"github.com/mochen302/parser/v5/terror"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/terror"
 )
 
 // CheckScrambledPassword check scrambled password received from client.

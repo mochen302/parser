@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/mochen302/parser/v5"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/parser"
 )
 
 var _ = Suite(&testSQLDigestSuite{})

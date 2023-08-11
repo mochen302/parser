@@ -14,14 +14,14 @@
 package ast
 
 import (
+	"github.com/mochen302/parser/v5/auth"
+	"github.com/mochen302/parser/v5/format"
+	"github.com/mochen302/parser/v5/model"
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/terror"
+	"github.com/mochen302/parser/v5/tidb"
+	"github.com/mochen302/parser/v5/types"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/auth"
-	"github.com/pingcap/parser/format"
-	"github.com/pingcap/parser/model"
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/terror"
-	"github.com/pingcap/parser/tidb"
-	"github.com/pingcap/parser/types"
 )
 
 var (

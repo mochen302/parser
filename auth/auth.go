@@ -16,7 +16,7 @@ package auth
 import (
 	"fmt"
 
-	"github.com/pingcap/parser/format"
+	"github.com/mochen302/parser/v5/format"
 )
 
 // UserIdentity represents username and hostname.

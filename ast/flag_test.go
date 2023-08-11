@@ -16,9 +16,9 @@ package ast_test
 import (
 	"testing"
 
+	"github.com/mochen302/parser/v5"
+	"github.com/mochen302/parser/v5/ast"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/parser"
-	"github.com/pingcap/parser/ast"
 )
 
 func TestT(t *testing.T) {

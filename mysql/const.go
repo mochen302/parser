@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/mochen302/parser/v5/format"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/format"
 )
 
 func newInvalidModeErr(s string) error {

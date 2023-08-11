@@ -19,10 +19,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/mochen302/parser/v5/format"
+	"github.com/mochen302/parser/v5/model"
+	"github.com/mochen302/parser/v5/types"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/format"
-	"github.com/pingcap/parser/model"
-	"github.com/pingcap/parser/types"
 )
 
 var (

@@ -17,11 +17,11 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/mochen302/parser/v5"
+	. "github.com/mochen302/parser/v5/ast"
+	. "github.com/mochen302/parser/v5/format"
+	"github.com/mochen302/parser/v5/test_driver"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/parser"
-	. "github.com/pingcap/parser/ast"
-	. "github.com/pingcap/parser/format"
-	"github.com/pingcap/parser/test_driver"
 )
 
 var _ = Suite(&testCacheableSuite{})

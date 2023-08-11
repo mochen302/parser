@@ -14,11 +14,11 @@
 package ast_test
 
 import (
+	"github.com/mochen302/parser/v5"
+	"github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/auth"
+	"github.com/mochen302/parser/v5/mysql"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/parser"
-	"github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/auth"
-	"github.com/pingcap/parser/mysql"
 )
 
 var _ = Suite(&testMiscSuite{})

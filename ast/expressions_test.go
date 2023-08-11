@@ -14,10 +14,10 @@
 package ast_test
 
 import (
+	. "github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/format"
+	"github.com/mochen302/parser/v5/mysql"
 	. "github.com/pingcap/check"
-	. "github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/format"
-	"github.com/pingcap/parser/mysql"
 )
 
 var _ = Suite(&testExpressionsSuite{})

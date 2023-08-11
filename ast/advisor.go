@@ -14,7 +14,7 @@
 package ast
 
 import (
-	"github.com/pingcap/parser/format"
+	"github.com/mochen302/parser/v5/format"
 )
 
 var _ StmtNode = &IndexAdviseStmt{}

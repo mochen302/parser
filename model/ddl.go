@@ -20,9 +20,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/terror"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/terror"
 )
 
 // ActionType is the type for DDL action.

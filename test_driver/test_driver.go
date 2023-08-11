@@ -20,10 +20,10 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/charset"
-	"github.com/pingcap/parser/format"
-	"github.com/pingcap/parser/mysql"
+	"github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/charset"
+	"github.com/mochen302/parser/v5/format"
+	"github.com/mochen302/parser/v5/mysql"
 )
 
 func init() {

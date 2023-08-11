@@ -20,9 +20,9 @@ import (
 	"sync"
 	"sync/atomic"
 
+	"github.com/mochen302/parser/v5/mysql"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/parser/mysql"
 	"go.uber.org/zap"
 )
 

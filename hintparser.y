@@ -18,8 +18,8 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/model"
+	"github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/model"
 )
 
 %}

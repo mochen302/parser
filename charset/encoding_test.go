@@ -14,8 +14,8 @@
 package charset_test
 
 import (
+	"github.com/mochen302/parser/v5/charset"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/parser/charset"
 	"golang.org/x/text/transform"
 )
 

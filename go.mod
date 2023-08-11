@@ -1,4 +1,4 @@
-module github.com/pingcap/parser
+module github.com/mochen302/parser/v5
 
 require (
 	github.com/cznic/golex v0.0.0-20181122101858-9c343928389c // indirect
@@ -17,4 +17,4 @@ require (
 	golang.org/x/text v0.3.6
 )
 
-go 1.13
+go 1.14

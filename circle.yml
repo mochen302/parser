@@ -4,14 +4,14 @@ jobs:
   build-ut:
     docker:
       - image: golang:1.16
-    working_directory: /go/src/github.com/pingcap/parser
+    working_directory: /go/src/github.com/mochen302/parser/v5
     steps:
       - checkout
       - run: echo skip
   build-integration:
     docker:
       - image: golang:1.16
-    working_directory: /go/src/github.com/pingcap/parser
+    working_directory: /go/src/github.com/mochen302/parser/v5
     steps:
       - checkout
       - run: echo skip 

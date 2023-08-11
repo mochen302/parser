@@ -17,9 +17,9 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/terror"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/terror"
 )
 
 var (

@@ -23,10 +23,10 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/mochen302/parser/v5/charset"
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/types"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/charset"
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/types"
 )
 
 // Kind constants.

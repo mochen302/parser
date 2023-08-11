@@ -19,9 +19,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/types"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/types"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -20,17 +20,17 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/mochen302/parser/v5"
+	"github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/charset"
+	. "github.com/mochen302/parser/v5/format"
+	"github.com/mochen302/parser/v5/model"
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/opcode"
+	"github.com/mochen302/parser/v5/terror"
+	"github.com/mochen302/parser/v5/test_driver"
 	. "github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser"
-	"github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/charset"
-	. "github.com/pingcap/parser/format"
-	"github.com/pingcap/parser/model"
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/opcode"
-	"github.com/pingcap/parser/terror"
-	"github.com/pingcap/parser/test_driver"
 )
 
 func TestT(t *testing.T) {
@@ -881,7 +881,7 @@ func (s *testParserSuite) TestDMLStmt(c *C) {
 		{"select 1 group by 1", true, "SELECT 1 GROUP BY 1"},
 		{"select 1 from dual group by 1", true, "SELECT 1 GROUP BY 1"},
 
-		// for https://github.com/pingcap/parser/issues/963
+		// for https://github.com/mochen302/parser/v5/issues/963
 		{"select min(b) b from (select min(t.b) b from t where t.a = '');", true, "SELECT MIN(`b`) AS `b` FROM (SELECT MIN(`t`.`b`) AS `b` FROM `t` WHERE `t`.`a`=_UTF8MB4'')"},
 		{"select min(b) b from (select min(t.b) b from t where t.a = '') as t1;", true, "SELECT MIN(`b`) AS `b` FROM (SELECT MIN(`t`.`b`) AS `b` FROM `t` WHERE `t`.`a`=_UTF8MB4'') AS `t1`"},
 
@@ -5584,7 +5584,7 @@ func (wfc *windowFrameBoundChecker) Leave(inNode ast.Node) (node ast.Node, ok bo
 }
 
 // For issue #51
-// See https://github.com/pingcap/parser/pull/51 for details
+// See https://github.com/mochen302/parser/v5/pull/51 for details
 func (s *testParserSuite) TestVisitFrameBound(c *C) {
 	parser := parser.New()
 	parser.EnableWindowFunc(true)
@@ -5629,7 +5629,7 @@ func (s *testParserSuite) TestFieldText(c *C) {
 	}
 }
 
-// See https://github.com/pingcap/parser/issue/94
+// See https://github.com/mochen302/parser/v5/issue/94
 func (s *testParserSuite) TestQuotedSystemVariables(c *C) {
 	parser := parser.New()
 
@@ -5690,7 +5690,7 @@ func (s *testParserSuite) TestQuotedSystemVariables(c *C) {
 	}
 }
 
-// See https://github.com/pingcap/parser/issue/95
+// See https://github.com/mochen302/parser/v5/issue/95
 func (s *testParserSuite) TestQuotedVariableColumnName(c *C) {
 	parser := parser.New()
 

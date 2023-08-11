@@ -17,15 +17,15 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/mochen302/parser/v5"
+	"github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/charset"
+	"github.com/mochen302/parser/v5/mysql"
+	. "github.com/mochen302/parser/v5/types"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/parser"
-	"github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/charset"
-	"github.com/pingcap/parser/mysql"
-	. "github.com/pingcap/parser/types"
 
 	// import parser_driver
-	_ "github.com/pingcap/parser/test_driver"
+	_ "github.com/mochen302/parser/v5/test_driver"
 )
 
 func TestT(t *testing.T) {

@@ -21,10 +21,10 @@ import (
 	"unicode"
 	"unicode/utf8"
 
+	"github.com/mochen302/parser/v5/charset"
+	"github.com/mochen302/parser/v5/mysql"
+	tidbfeature "github.com/mochen302/parser/v5/tidb"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/charset"
-	"github.com/pingcap/parser/mysql"
-	tidbfeature "github.com/pingcap/parser/tidb"
 )
 
 var _ = yyLexer(&Scanner{})

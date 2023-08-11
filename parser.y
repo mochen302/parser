@@ -28,13 +28,13 @@ package parser
 import (
 	"strings"
 
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/model"
-	"github.com/pingcap/parser/opcode"
-	"github.com/pingcap/parser/auth"
-	"github.com/pingcap/parser/charset"
-	"github.com/pingcap/parser/types"
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/model"
+	"github.com/mochen302/parser/v5/opcode"
+	"github.com/mochen302/parser/v5/auth"
+	"github.com/mochen302/parser/v5/charset"
+	"github.com/mochen302/parser/v5/types"
 )
 
 %}

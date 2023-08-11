@@ -20,10 +20,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/mochen302/parser/v5/auth"
+	"github.com/mochen302/parser/v5/mysql"
+	"github.com/mochen302/parser/v5/types"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/auth"
-	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/parser/types"
 )
 
 // SchemaState is the state for schema elements.
@@ -799,7 +799,7 @@ type PartitionInfo struct {
 func (pi *PartitionInfo) GetNameByID(id int64) string {
 	definitions := pi.Definitions
 	// do not convert this loop to `for _, def := range definitions`.
-	// see https://github.com/pingcap/parser/pull/1072 for the benchmark.
+	// see https://github.com/mochen302/parser/v5/pull/1072 for the benchmark.
 	for i := range definitions {
 		if id == definitions[i].ID {
 			return definitions[i].Name.L

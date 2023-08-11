@@ -16,11 +16,11 @@ package ast
 import (
 	"strings"
 
+	"github.com/mochen302/parser/v5/auth"
+	"github.com/mochen302/parser/v5/format"
+	"github.com/mochen302/parser/v5/model"
+	"github.com/mochen302/parser/v5/mysql"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/parser/auth"
-	"github.com/pingcap/parser/format"
-	"github.com/pingcap/parser/model"
-	"github.com/pingcap/parser/mysql"
 )
 
 var (

@@ -16,10 +16,10 @@ package parser_test
 import (
 	. "github.com/pingcap/check"
 
-	"github.com/pingcap/parser"
-	"github.com/pingcap/parser/ast"
-	"github.com/pingcap/parser/model"
-	"github.com/pingcap/parser/mysql"
+	"github.com/mochen302/parser/v5"
+	"github.com/mochen302/parser/v5/ast"
+	"github.com/mochen302/parser/v5/model"
+	"github.com/mochen302/parser/v5/mysql"
 )
 
 var _ = Suite(&testHintParserSuite{})

@@ -14,7 +14,7 @@
 package ast
 
 import (
-	"github.com/pingcap/parser/types"
+	"github.com/mochen302/parser/v5/types"
 )
 
 // node is the struct implements Node interface except for Accept method.

@@ -24,7 +24,7 @@ import (
 	"unicode"
 	"unsafe"
 
-	"github.com/pingcap/parser/charset"
+	"github.com/mochen302/parser/v5/charset"
 )
 
 type Digest struct {
