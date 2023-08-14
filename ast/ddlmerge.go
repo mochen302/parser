@@ -54,7 +54,9 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 			for _, v := range spec.Options {
 				for ii, vv := range n.Options {
 					if vv.Tp == v.Tp {
-						v.UintValue = TableOptionCharsetWithoutConvertTo
+						if v.Tp == TableOptionCharset {
+							v.UintValue = TableOptionCharsetWithoutConvertTo
+						}
 						n.Options[ii] = v
 					}
 				}
