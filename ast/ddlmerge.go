@@ -54,6 +54,7 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 			for _, v := range spec.Options {
 				for ii, vv := range n.Options {
 					if vv.Tp == v.Tp {
+						v.UintValue = TableOptionCharsetWithoutConvertTo
 						n.Options[ii] = v
 					}
 				}
@@ -68,7 +69,7 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 				relativeColumn := spec.Position.RelativeColumn
 				for i, v := range n.Cols {
 					if v.Name.Name.L == relativeColumn.Name.L {
-						n.Cols = append(append(n.Cols[:i+1], spec.NewColumns...), n.Cols[i+1:]...)
+						n.Cols = append(append(append([]*ColumnDef{}, n.Cols[:i+1]...), spec.NewColumns...), n.Cols[i+1:]...)
 						break
 					}
 				}
@@ -100,7 +101,7 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 	case AlterTableDropIndex:
 		{
 			for i, v := range n.Constraints {
-				if v.Tp == ConstraintIndex && v.Name == spec.Name {
+				if v.Name == spec.Name {
 					n.Constraints = append(n.Constraints[:i], n.Constraints[i+1:]...)
 					break
 				}
