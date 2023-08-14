@@ -13,6 +13,27 @@ func (n *CreateTableStmt) Merge(other DDLNode) error {
 	if at, ok := other.(*AlterTableStmt); ok {
 		return n.MergeAlterTableStmt(at)
 	}
+	if at, ok := other.(*CreateIndexStmt); ok {
+		tp := ConstraintIndex
+		if at.KeyType == IndexKeyTypeUnique {
+			tp = ConstraintUniqIndex
+		}
+		n.Constraints = append(n.Constraints, &Constraint{
+			node:         at.node,
+			IfNotExists:  at.IfNotExists,
+			Tp:           tp,
+			Name:         at.IndexName,
+			Keys:         at.IndexPartSpecifications,
+			Refer:        nil,
+			Option:       at.IndexOption,
+			Expr:         nil,
+			Enforced:     false,
+			InColumn:     false,
+			InColumnName: "",
+			IsEmptyIndex: false,
+		})
+		return nil
+	}
 	return ErrMergeNotSupportDDL
 }
 
@@ -28,6 +49,16 @@ func (n *CreateTableStmt) MergeAlterTableStmt(at *AlterTableStmt) error {
 
 func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 	switch spec.Tp {
+	case AlterTableOption:
+		{
+			for _, v := range spec.Options {
+				for ii, vv := range n.Options {
+					if vv.Tp == v.Tp {
+						n.Options[ii] = v
+					}
+				}
+			}
+		}
 	case AlterTableAddColumns:
 		{
 			switch spec.Position.Tp {
