@@ -2455,15 +2455,120 @@ const (
 	AlterTableImportTablespace
 	AlterTableDiscardTablespace
 	AlterTableIndexInvisible
-	// TODO: Add more actions
 	AlterTableOrderByColumns
-	// AlterTableSetTiFlashReplica uses to set the table TiFlash replica.
 	AlterTableSetTiFlashReplica
 	AlterTablePlacement
 	AlterTableAddStatistics
 	AlterTableDropStatistics
 	AlterTableAttributes
 )
+
+func (atp AlterTableType) String() string {
+	switch atp {
+	case AlterTableAddColumns:
+		return "AlterTableAddColumns"
+	case AlterTableAddConstraint:
+		return "AlterTableAddConstraint"
+	case AlterTableDropColumn:
+		return "AlterTableDropColumn"
+	case AlterTableDropPrimaryKey:
+		return "AlterTableDropPrimaryKey"
+	case AlterTableDropIndex:
+		return "AlterTableDropIndex"
+	case AlterTableDropForeignKey:
+		return "AlterTableDropForeignKey"
+	case AlterTableModifyColumn:
+		return "AlterTableModifyColumn"
+	case AlterTableChangeColumn:
+		return "AlterTableChangeColumn"
+	case AlterTableRenameColumn:
+		return "AlterTableRenameColumn"
+	case AlterTableRenameTable:
+		return "AlterTableRenameTable"
+	case AlterTableAlterColumn:
+		return "AlterTableAlterColumn"
+	case AlterTableLock:
+		return "AlterTableLock"
+	case AlterTableWriteable:
+		return "AlterTableWriteable"
+	case AlterTableAlgorithm:
+		return "AlterTableAlgorithm"
+	case AlterTableRenameIndex:
+		return "AlterTableRenameIndex"
+	case AlterTableForce:
+		return "AlterTableForce"
+	case AlterTableAddPartitions:
+		return "AlterTableAddPartitions"
+	case AlterTableAlterPartition:
+		return "AlterTableAlterPartition"
+	case AlterTablePartitionAttributes:
+		return "AlterTablePartitionAttributes"
+	case AlterTablePartitionOptions:
+		return "AlterTablePartitionOptions"
+	case AlterTableCoalescePartitions:
+		return "AlterTableCoalescePartitions"
+	case AlterTableDropPartition:
+		return "AlterTableDropPartition"
+	case AlterTableTruncatePartition:
+		return "AlterTableTruncatePartition"
+	case AlterTablePartition:
+		return "AlterTablePartition"
+	case AlterTableEnableKeys:
+		return "AlterTableEnableKeys"
+	case AlterTableDisableKeys:
+		return "AlterTableDisableKeys"
+	case AlterTableRemovePartitioning:
+		return "AlterTableRemovePartitioning"
+	case AlterTableWithValidation:
+		return "AlterTableWithValidation"
+	case AlterTableWithoutValidation:
+		return "AlterTableWithoutValidation"
+	case AlterTableSecondaryLoad:
+		return "AlterTableSecondaryLoad"
+	case AlterTableSecondaryUnload:
+		return "AlterTableSecondaryUnload"
+	case AlterTableRebuildPartition:
+		return "AlterTableRebuildPartition"
+	case AlterTableReorganizePartition:
+		return "AlterTableReorganizePartition"
+	case AlterTableCheckPartitions:
+		return "AlterTableCheckPartitions"
+	case AlterTableExchangePartition:
+		return "AlterTableExchangePartition"
+	case AlterTableOptimizePartition:
+		return "AlterTableOptimizePartition"
+	case AlterTableRepairPartition:
+		return "AlterTableRepairPartition"
+	case AlterTableImportPartitionTablespace:
+		return "AlterTableImportPartitionTablespace"
+	case AlterTableDiscardPartitionTablespace:
+		return "AlterTableDiscardPartitionTablespace"
+	case AlterTableAlterCheck:
+		return "AlterTableAlterCheck"
+	case AlterTableDropCheck:
+		return "AlterTableDropCheck"
+	case AlterTableImportTablespace:
+		return "AlterTableImportTablespace"
+	case AlterTableDiscardTablespace:
+		return "AlterTableDiscardTablespace"
+	case AlterTableIndexInvisible:
+		return "AlterTableIndexInvisible"
+	case AlterTableOrderByColumns:
+		return "AlterTableOrderByColumns"
+	case AlterTableSetTiFlashReplica:
+		return "AlterTableSetTiFlashReplica"
+	case AlterTablePlacement:
+		return "AlterTablePlacement"
+	case AlterTableAddStatistics:
+		return "AlterTableAddStatistics"
+	case AlterTableDropStatistics:
+		return "AlterTableDropStatistics"
+	case AlterTableAttributes:
+		return "AlterTableAttributes"
+	default:
+		return "AlterTableOption"
+	}
+}
 
 // LockType is the type for AlterTableSpec.
 // See https://dev.mysql.com/doc/refman/5.7/en/alter-table.html#alter-table-concurrency

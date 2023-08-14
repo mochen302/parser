@@ -108,7 +108,7 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 		}
 	case AlterTableRenameTable:
 		{
-			n.Table.Name = spec.NewTable.Name
+			n.Table = spec.NewTable
 		}
 	case AlterTableAlterColumn:
 		{
@@ -146,8 +146,12 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 				}
 			}
 		}
+	case AlterTableReorganizePartition:
+		{
+			n.Partition.Definitions = spec.PartDefinitions
+		}
 	default:
-		return fmt.Errorf("can not support type:%v", spec.Tp)
+		return fmt.Errorf("can not support type:%v", spec.Tp.String())
 	}
 
 	return nil
