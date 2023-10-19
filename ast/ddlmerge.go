@@ -67,6 +67,8 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 			switch spec.Position.Tp {
 			case ColumnPositionFirst:
 				n.Cols = append(append([]*ColumnDef{}, spec.NewColumns...), n.Cols...)
+			case ColumnPositionNone:
+				n.Cols = append(n.Cols, spec.NewColumns...)
 			case ColumnPositionAfter:
 				relativeColumn := spec.Position.RelativeColumn
 				for i, v := range n.Cols {
