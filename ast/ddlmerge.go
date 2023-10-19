@@ -86,7 +86,7 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 		{
 			for i, v := range n.Cols {
 				if v.Name.Name.L == spec.OldColumnName.Name.L {
-					n.Cols = append(n.Cols[:i], n.Cols[i:]...)
+					n.Cols = append(n.Cols[:i], n.Cols[i+1:]...)
 					break
 				}
 			}
