@@ -85,7 +85,7 @@ func (n *CreateTableStmt) mergeAlterTableSpec(spec *AlterTableSpec) error {
 	case AlterTableDropColumn:
 		{
 			for i, v := range n.Cols {
-				if v.Name == spec.OldColumnName {
+				if v.Name.Name.L == spec.OldColumnName.Name.L {
 					n.Cols = append(n.Cols[:i], n.Cols[i:]...)
 					break
 				}
